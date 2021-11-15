@@ -5,3 +5,26 @@
 .delete {
     background-color: red;
 }
+
+
+.inactive {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.readStatus{
+    background-color: green;
+}
+
+#book-ctn{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+
+}
+
+#book-ctn div{
+    border: solid red 2px;
+}
