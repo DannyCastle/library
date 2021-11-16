@@ -1,6 +1,12 @@
+body {
+    background-color: #797;
+}
 
-
-
+.center{
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
 
 .delete {
     background-color: red;
@@ -16,15 +22,37 @@
 }
 
 .readStatus{
-    background-color: green;
+
+}
+
+.read{
+    background-color: #393;
+    color: #000;
+}
+
+.not-read{
+    background-color: #123;
+    color: #ABC;
 }
 
 #book-ctn{
+    margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr) ;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    background-color: #9BC;
+    border: solid white 10px;
+    border-radius: 5%;
 
 }
 
 #book-ctn div{
+    background-color: #333;
+    min-width: 200px;
+    border-radius: 5%;
     border: solid red 2px;
+    margin: auto;
+    text-align: center;
+    color: #AFF;
+
 }

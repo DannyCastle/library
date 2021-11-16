@@ -52,7 +52,9 @@ function toggleReadStatus(index){
   myLibrary[index].read = (myLibrary[index].read) ? false : true;
 
   let statusToChange = document.querySelector(`[data-index = "${index}"] .readStatus`);
-  statusToChange.textContent = (myLibrary[index].read) ? 'Read: true' : 'Read: false';
+  statusToChange.textContent = (myLibrary[index].read) ? 'Read' : 'Not read';
+  statusToChange.classList.remove((myLibrary[index].read) ? "not-read" : "read");
+  statusToChange.classList.add((myLibrary[index].read) ? "read" : "not-read");
   populateStorage();
 
 };
@@ -67,30 +69,26 @@ function displayBook (book, index){
   let bookAuthor = document.createElement('p');
   let bookPages = document.createElement('p');
   let bookReadToggle = document.createElement('button');
-  let bookReadStatus = document.createElement('p');
-  bookReadStatus.classList.add('readStatus');
+  bookReadToggle.classList.add('readStatus');
 
-
-
+  let lineBreak = document.createElement("br");
   let bookRemoveButton = document.createElement('button');
   bookRemoveButton.classList.add('delete');
 
 
-
-
-  bookTitle.textContent = "Title: " + book.title;
-  bookAuthor.textContent = "Author: " + book.author;
-  bookPages.textContent = "Pages: " + book.pages;
-  bookReadStatus.textContent = "Read: " + book.read;
-  bookReadToggle.textContent = "Toggle Read Status";
+  bookTitle.textContent = `"${book.title}"`;
+  bookAuthor.textContent = book.author;
+  bookPages.textContent = `${book.pages} pages`;
+  bookReadToggle.textContent = (book.read) ? "Read" : "Not read";
+  bookReadToggle.classList.add((book.read) ? "read" : "not-read");
   bookRemoveButton.textContent = 'DELETE';
 
 
   bookDiv.appendChild(bookTitle);
   bookDiv.appendChild(bookAuthor);
   bookDiv.appendChild(bookPages);
-  bookDiv.appendChild(bookReadStatus);
   bookDiv.appendChild(bookReadToggle);
+  bookDiv.appendChild(lineBreak);
   bookDiv.appendChild(bookRemoveButton);
 
 
