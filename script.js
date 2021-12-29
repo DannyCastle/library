@@ -15,11 +15,13 @@ newBookForm.onsubmit = addBook;
 initialDisplay();
 
 
-function book (title, author, pages, read){
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  };
 };
 
 function addBook (e){
@@ -31,7 +33,7 @@ function addBook (e){
     let read = document.querySelector('#read').checked;
 
 
-    let newBook = new book(title, author, pages, read);
+    let newBook = new Book(title, author, pages, read);
 
     myLibrary.push(newBook);
     let i = myLibrary.length - 1;
